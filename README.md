@@ -1,6 +1,6 @@
 # shadow_spider
 
-标签（空格分隔）： deep web
+标签： deep web
 
 
 ----------
