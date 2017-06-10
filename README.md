@@ -131,19 +131,19 @@
 *在requests中进入暗网*：
 新建一个test.py,输入以下内容：
 
-"""
-import requests
 
-proxies = {'http': 'http://127.0.0.1:7777', 'https': 'http://127.0.0.1:7777'}
 
-s = requests.Session()
-r = s.get("http://hcutffpecnc44vef.onion/", proxies = proxies)
-print(r.text)
 
-f = open("onion.html", "wb")
-f.write(r.content)
-f.close()
-"""
+    import requests
+    proxies = {'http': 'http://127.0.0.1:7777', 'https': 'http://127.0.0.1:7777'}
+    s = requests.Session()
+    r = s.get("http://hcutffpecnc44vef.onion/", proxies = proxies)
+    print(r.text)
+    f = open("onion.html", "wb")
+    f.write(r.content)
+    f.close()
+
+
 
 
 运行，发现可以打印这个暗网网页的内容出来了：
@@ -166,22 +166,22 @@ phantomjs下载：
 这是一个暗网wiki，上面有很多分类好的暗网url,各位要谨慎点开那些url，因为不少内容不健康的。
 下载phantomjs解压，新建一个test2.py文件(下面的executable_path是上面下载解压phantomjs得到的phantomjs.exe运行文件的路径)
 
-"""
-from selenium import webdriver
 
-executable_path = "C:/Users/Administrator/Downloads/phantomjs-2.1.1-windows/phantomjs-2.1.1-windows/bin/phantomjs.exe"
-service_args = ['--proxy=127.0.0.1:7777', '--proxy-type=http']
+    from selenium import webdriver
+    
+    executable_path = "C:/Users/Administrator/Downloads/phantomjs-2.1.1-windows/phantomjs-2.1.1-windows/bin/phantomjs.exe"
+    service_args = ['--proxy=127.0.0.1:7777', '--proxy-type=http']
+    
+    driver = webdriver.PhantomJS(executable_path = executable_path, service_args = service_args)
+    
+    driver.get("http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page")
+    
+    print(driver.page_source)
+    
+    f = open("onion.html", "wb")
+    f.write(driver.page_source.encode("utf-8"))
+    f.close()
 
-driver = webdriver.PhantomJS(executable_path = executable_path, service_args = service_args)
-
-driver.get("http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page")
-
-print(driver.page_source)
-
-f = open("onion.html", "wb")
-f.write(driver.page_source.encode("utf-8"))
-f.close()
-"""
 
 结果也可行：
 
