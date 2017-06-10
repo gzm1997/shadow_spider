@@ -90,6 +90,3 @@ def download(base_url):
         download_source(s, make_folder(main_folder, i), base_url, i)
     print("下载完成！")
 
-if __name__ == "__main__":
-	base_url = input("请输入暗网url: ")
-	download(base_url)
