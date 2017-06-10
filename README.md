@@ -32,11 +32,11 @@
     本人提供的百度云[链接][4]，密码: fsp8
     下载解压
 
- 2. 下载tor expert bundle没有图形界面，使用起来不方便，因此需要下载Vidalia配合使用
+ 2. 下载到的tor expert bundle没有图形界面，使用起来不方便，因此需要下载Vidalia配合使用
     本人提供的百度云[链接][5]，密码: kknf
 
  3. cow下载，百度云[连接][6]，密码: c4kx。
-    由于tor使用的协议是socks5，由于需要python的**requests**和**selenium**两个模块进行get， post请求。但是经过本人尝试，requests对socks5协议代理支持是很不良好的，使用requests加上socks5协议代理去get类似于https://api.ipify.org/?format=json这样查询ip的url是没有问题的，但是去get其他url或者暗网的url马上会出现莫名其妙的错误。所以需要使用cow把tor的socks5协议转为http协议
+    由于tor使用的协议是socks5，由于需要python的**requests**和**selenium**两个模块进行get， post请求。但是经过本人尝试，requests对socks5协议代理支持是很不良好的，使用requests加上socks5协议代理去get类似于 https://api.ipify.org/?format=json 这样查询ip的url是没有问题的，但是去get其他url或者暗网的url马上会出现莫名其妙的错误。所以需要使用cow把tor的socks5协议转为http协议
 
 **配置**
 我们要配置上面下载到的工具，使得我们的代理路线如下：
