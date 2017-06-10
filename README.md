@@ -130,6 +130,7 @@
 
 *在requests中进入暗网*：
 新建一个test.py,输入以下内容：
+
 """
 import requests
 
@@ -143,6 +144,8 @@ f = open("onion.html", "wb")
 f.write(r.content)
 f.close()
 """
+
+
 运行，发现可以打印这个暗网网页的内容出来了：
 
 ![run test][19]
@@ -162,6 +165,7 @@ phantomjs下载：
 这次我们选择另一个暗网url:http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page
 这是一个暗网wiki，上面有很多分类好的暗网url,各位要谨慎点开那些url，因为不少内容不健康的。
 下载phantomjs解压，新建一个test2.py文件(下面的executable_path是上面下载解压phantomjs得到的phantomjs.exe运行文件的路径)
+
 """
 from selenium import webdriver
 
@@ -178,6 +182,7 @@ f = open("onion.html", "wb")
 f.write(driver.page_source.encode("utf-8"))
 f.close()
 """
+
 结果也可行：
 
 ![run test2][23]
