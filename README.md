@@ -204,7 +204,7 @@ phantomjs下载：
 注意要点：
 
  - 下载html
- - 在下载html之前必须加载javascript。因为javascript里面会有ajax，如果把javascript下载下来，而不是加载完javascript再下载html，那么下载到本地ajax像tor网络（暗网）中的服务器发送网络请求，这是行不通的。所以必须加载完javascript再下载html（网上有人说暗网上的网页都没有javascript，但是经本人尝试，暗网上的网页是有javascript的）。而python里加载javascript一个很好的工具就是上面的selenium
+ - 在下载html之前必须加载javascript。因为javascript里面会有ajax，如果把javascript下载下来，而不是加载完javascript再下载html，那么下载到本地ajax向tor网络（暗网）中的服务器发送网络请求，这是行不通的。所以必须加载完javascript再下载html（网上有人说暗网上的网页都没有javascript，但是经本人尝试，暗网上的网页是有javascript的）。而python里加载javascript一个很好的工具就是上面的selenium
  - 下载css和图片等静态资源，需要使用requests模块，不能使用selenium。selenium下载图片和css等资源是很蛋疼的。因为这些模拟浏览器要下载资源就必须做到模仿我们在真的浏览器上那样右键另存为等操作，而这时候会弹出下载确认的弹窗，而selenium中的chrome和firefox是需要手动点击代码运行过程中弹出来的确认保存弹窗的，而phantomjs没有图形界面，所以就根本下载不图片和css等资源。
 
 代码细节不详细说了，在我的[github][26]中下载到本地，运行main.py文件，输入一个暗网url:
