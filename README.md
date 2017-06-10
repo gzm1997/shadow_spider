@@ -65,30 +65,45 @@
 2,开启你的vpn，本人使用的green vpn，socks5协议，监听1080端口
 
 3,安装vidalia，安装后如图所示：
+
 ![vidalia][8]
+
+
 然后以**管理员身份**运行Start Vidalia.exe
+
 ![vidalia run][9]
+
 点击设定，在常规那里选中vidalia启动时运行tor软件，并在下面的路径中找到解压tor expert bundle后得到的tor.exe
+
 ![setting1][10]
 
 点击网络，选中我使用代理服务器连接网络，由于本人使用的green vpn是监听本地的1080端口，所以地址写为：127.0.0.1，端口写为：1080（貌似shadowsocks等vpn也是监听本地1080端口）
+
 ![setting2][11]
 
 点击高级，在tor配置文件下选中vidalia安装后得到的Data/Tor/torrc文件，在数据目录那里选中Data文件夹（貌似我是多余地自己另外创建了一个Data文件夹给它，但是并不影响，有一个Data文件夹给vidalia存储数据就可以了）
+
 ![setting3][12]
+
 点击确认
 
 点击启动tor
+
 ![run][13]
 
 稍等片刻，显示连接tor网络成功！
+
 ![connect][14]
 
 因为需要在requests模块上使用tor代理而requests模块对socks5支持非常不良好，所以我们需要配置cow把socks5转为http
 打开解压后的cow目录：
+
 ![cow][15]
+
 修改rc.txt内容为如下：
+
 ![rc][16]
+
 点击运行cow.exe或者点击cow-hide.exe后台运行
 
 
@@ -102,12 +117,14 @@
 
 
 再次重申上面配置好的代理结构：
+
 ![net][17]
 
 能否正常使用tor代理一个很好的检验方法就是能否**进入暗网**，这是一个收集了很多暗网url的网站：https://onionlinks.org/
 
 我给出一个暗网url:**http://hcutffpecnc44vef.onion/**
 这是一个暗网的金融网站，普通的上网方式是打不开的，作为一个大哥哥，真心建议18-的小朋友还是不要去看暗网一些其他内容，为了你的身心健康。那下面的测试就是在python中进入这个暗网url为检验标准。
+
 ![cash machine][18]
 
 
@@ -127,8 +144,11 @@ f.write(r.content)
 f.close()
 """
 运行，发现可以打印这个暗网网页的内容出来了：
+
 ![run test][19]
+
 打开test.py同一目录下，生成了一个onion.html的文件，点开，发现把内容也下载下来了：
+
 ![get][20]
 
 
@@ -159,6 +179,7 @@ f.write(driver.page_source.encode("utf-8"))
 f.close()
 """
 结果也可行：
+
 ![run test2][23]
 ![wiki][24]
 
@@ -182,18 +203,28 @@ f.close()
  - 下载css和图片等静态资源，需要使用requests模块，不能使用selenium。selenium下载图片和css等资源是很蛋疼的。因为这些模拟浏览器要下载资源就必须做到模仿我们在真的浏览器上那样右键另存为等操作，而这时候会弹出下载确认的弹窗，而selenium中的chrome和firefox是需要手动点击代码运行过程中弹出来的确认保存弹窗的，而phantomjs没有图形界面，所以就根本下载不图片和css等资源。
 
 代码细节不详细说了，在我的[github][26]中下载到本地，运行main.py文件，输入一个暗网url:
+
 ![run main][27]
+
 下载到本地的结果：
+
 ![result][28]
+
 下面是一些暗网网页真实模样和我还原的样子：
 真实1：
+
 ![real1][29]
+
 还原1：
+
 ![imitate1][30]
 
 真实2：
+
 ![real2][31]
+
 还原2：
+
 ![imitate2][32]
 
 此项目shadow_spider未完待续，等到暑假回考虑添加服务端。
