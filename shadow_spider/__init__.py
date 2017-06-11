@@ -40,7 +40,7 @@ def make_folder(main_folder_name, source_url):
     if source_url[2:source_url.rfind("/")] != "":
         folders_name = main_folder_name + "/" + source_url[2:source_url.rfind("/")]
     else:
-    	   folders_name = main_folder_name
+    	folders_name = main_folder_name
     if len(folders_name) != 0:
         if not os.path.exists(folders_name):
             os.makedirs(folders_name)
