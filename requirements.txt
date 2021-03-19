@@ -9,7 +9,7 @@ cycler==0.10.0
 Flask==0.12.2
 idna==2.5
 itsdangerous==0.24
-Jinja2==2.9.6
+Jinja2==2.11.3
 MarkupSafe==1.0
 matplotlib==2.0.2
 multidict==2.1.6
