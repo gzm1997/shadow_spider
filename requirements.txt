@@ -15,7 +15,7 @@ matplotlib==2.0.2
 multidict==2.1.6
 numpy==1.12.1
 olefile==0.44
-Pillow==4.1.1
+Pillow==8.2.0
 PyMySQL==0.7.11
 pyparsing==2.2.0
 pyreadline==2.1
