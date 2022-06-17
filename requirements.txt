@@ -13,7 +13,7 @@ Jinja2==2.9.6
 MarkupSafe==1.0
 matplotlib==2.0.2
 multidict==2.1.6
-numpy==1.12.1
+numpy==1.21.0
 olefile==0.44
 Pillow==4.1.1
 PyMySQL==0.7.11
